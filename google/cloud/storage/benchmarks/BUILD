@@ -27,12 +27,11 @@ cc_library(
         "//google/cloud:google_cloud_cpp_grpc_utils",
         "//google/cloud/storage:storage_client",
         "//google/cloud/storage:storage_client_testing",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_google_googleapis//google/storage/v1:storage_cc_grpc",
         "@com_google_googleapis//google/storage/v1:storage_cc_proto",
     ],
+    linkopts=["-lssl", "-lcrypto"],
 )
 
 load(":storage_benchmark_programs.bzl", "storage_benchmark_programs")
@@ -53,8 +52,6 @@ load(":storage_benchmark_programs.bzl", "storage_benchmark_programs")
         "//google/cloud/storage:storage_client",
         "//google/cloud/storage:storage_client_testing",
         "//google/cloud/testing_util:google_cloud_cpp_testing",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_google_absl//absl/strings",
     ],
@@ -75,8 +72,6 @@ load(":storage_benchmarks_unit_tests.bzl", "storage_benchmarks_unit_tests")
         "//google/cloud/storage:storage_client",
         "//google/cloud/storage:storage_client_testing",
         "//google/cloud/testing_util:google_cloud_cpp_testing",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_google_googletest//:gtest_main",
     ],

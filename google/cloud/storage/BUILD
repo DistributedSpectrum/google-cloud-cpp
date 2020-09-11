@@ -38,8 +38,6 @@ cc_library(
     deps = [
         ":storage_client",
         "//google/cloud:google_cloud_cpp_grpc_utils",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_github_google_crc32c//:crc32c",
         "@com_github_nlohmann_json//:nlohmann_json",
@@ -49,6 +47,7 @@ cc_library(
         "@com_google_googleapis//google/storage/v1:storage_cc_grpc",
         "@com_google_googleapis//google/storage/v1:storage_cc_proto",
     ],
+    linkopts=["-lssl", "-lcrypto"],
 )
 
 cc_library(
@@ -61,8 +60,6 @@ cc_library(
     }),
     deps = [
         "//google/cloud:google_cloud_cpp_common",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_github_google_crc32c//:crc32c",
         "@com_github_nlohmann_json//:nlohmann_json",
@@ -72,6 +69,7 @@ cc_library(
         "@com_google_absl//absl/types:span",
         "@com_google_absl//absl/types:variant",
     ],
+    linkopts=["-lssl", "-lcrypto"],
 )
 
 load(":storage_client_testing.bzl", "storage_client_testing_hdrs", "storage_client_testing_srcs")
@@ -88,12 +86,11 @@ cc_library(
         ":storage_client",
         ":storage_client_grpc",
         "//google/cloud:google_cloud_cpp_common",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_google_absl//absl/memory",
         "@com_google_googletest//:gtest_main",
     ],
+    linkopts=["-lssl", "-lcrypto"],
 )
 
 load(":storage_client_unit_tests.bzl", "storage_client_unit_tests")
@@ -114,8 +111,6 @@ load(":storage_client_unit_tests.bzl", "storage_client_unit_tests")
         ":storage_client_testing",
         "//google/cloud:google_cloud_cpp_common",
         "//google/cloud/testing_util:google_cloud_cpp_testing",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_google_absl//absl/memory",
         "@com_google_googletest//:gtest_main",
@@ -140,8 +135,6 @@ load(":storage_client_grpc_unit_tests.bzl", "storage_client_grpc_unit_tests")
         ":storage_client_testing",
         "//google/cloud/testing_util:google_cloud_cpp_testing",
         "//google/cloud/testing_util:google_cloud_cpp_testing_grpc",
-        "@boringssl//:crypto",
-        "@boringssl//:ssl",
         "@com_github_curl_curl//:curl",
         "@com_google_googletest//:gtest",
         "@com_google_googletest//:gtest_main",

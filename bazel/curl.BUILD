@@ -432,6 +432,7 @@ cc_library(
             "-DEFAULTLIB:Normaliz.lib",
         ],
         "//conditions:default": [
+            "-lssl",
             "-lrt",
         ],
     }),
@@ -442,9 +443,7 @@ cc_library(
         ":define-ca-bundle-location",
     ] + select({
         ":windows": [],
-        "//conditions:default": [
-            "@boringssl//:ssl",
-        ],
+        "//conditions:default": [],
     }),
 )
 
