@@ -132,11 +132,11 @@ def google_cloud_cpp_deps():
         http_archive(
             name = "com_github_curl_curl",
             urls = [
-                "https://curl.haxx.se/download/curl-7.69.1.tar.gz",
+                    "https://github.com/DistributedSpectrum/libcurl/archive/v1.0-ds.tar.gz",
             ],
-            strip_prefix = "curl-7.69.1",
-            sha256 = "01ae0c123dee45b01bbaef94c0bc00ed2aec89cb2ee0fd598e0d302a6b5e0a98",
+            strip_prefix = "libcurl-1.0-ds",
             build_file = "@com_github_googleapis_google_cloud_cpp//bazel:curl.BUILD",
+            sha256 = "a97a81a1f71a2de6fe233f541cb12d3eba9fd13efc69f2c21365f77bc6b9edf3",
         )
 
     # We need the nlohmann_json library

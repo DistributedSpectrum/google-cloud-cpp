@@ -432,6 +432,7 @@ cc_library(
             "-DEFAULTLIB:Normaliz.lib",
         ],
         "//conditions:default": [
+            "-lcrypto",
             "-lssl",
             "-lrt",
         ],
