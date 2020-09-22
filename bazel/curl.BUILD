@@ -440,7 +440,7 @@ cc_library(
         # Use the same version of zlib that gRPC does.
         "//external:madler_zlib",
         ":define-ca-bundle-location",
-        "//lib:openssl",
+        "@device//lib:openssl",
     ] + select({
         ":windows": [],
         "//conditions:default": [],
