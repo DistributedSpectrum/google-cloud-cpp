@@ -46,8 +46,8 @@ cc_library(
         "@com_google_absl//absl/time",
         "@com_google_googleapis//google/storage/v1:storage_cc_grpc",
         "@com_google_googleapis//google/storage/v1:storage_cc_proto",
+        "//lib:openssl",
     ],
-    linkopts=["-lssl", "-lcrypto"],
 )
 
 cc_library(
@@ -68,8 +68,8 @@ cc_library(
         "@com_google_absl//absl/time",
         "@com_google_absl//absl/types:span",
         "@com_google_absl//absl/types:variant",
+        "//lib:openssl",
     ],
-    linkopts=["-lssl", "-lcrypto"],
 )
 
 load(":storage_client_testing.bzl", "storage_client_testing_hdrs", "storage_client_testing_srcs")
@@ -89,8 +89,8 @@ cc_library(
         "@com_github_curl_curl//:curl",
         "@com_google_absl//absl/memory",
         "@com_google_googletest//:gtest_main",
+        "//lib:openssl",
     ],
-    linkopts=["-lssl", "-lcrypto"],
 )
 
 load(":storage_client_unit_tests.bzl", "storage_client_unit_tests")
