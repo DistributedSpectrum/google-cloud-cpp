@@ -46,7 +46,7 @@ cc_library(
         "@com_google_absl//absl/time",
         "@com_google_googleapis//google/storage/v1:storage_cc_grpc",
         "@com_google_googleapis//google/storage/v1:storage_cc_proto",
-        "@device//lib:openssl",
+        "//lib:openssl",
     ],
 )
 
@@ -68,7 +68,7 @@ cc_library(
         "@com_google_absl//absl/time",
         "@com_google_absl//absl/types:span",
         "@com_google_absl//absl/types:variant",
-        "@device//lib:openssl",
+        "//lib:openssl",
     ],
 )
 
@@ -89,7 +89,7 @@ cc_library(
         "@com_github_curl_curl//:curl",
         "@com_google_absl//absl/memory",
         "@com_google_googletest//:gtest_main",
-        "@device//lib:openssl",
+        "//lib:openssl",
     ],
 )
 

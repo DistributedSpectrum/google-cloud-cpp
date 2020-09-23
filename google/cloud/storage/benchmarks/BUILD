@@ -30,7 +30,7 @@ cc_library(
         "@com_github_curl_curl//:curl",
         "@com_google_googleapis//google/storage/v1:storage_cc_grpc",
         "@com_google_googleapis//google/storage/v1:storage_cc_proto",
-        "@device//lib:openssl",
+        "//lib:openssl",
     ],
 )
 
